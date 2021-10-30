@@ -27,14 +27,17 @@ git clone https://github.com/nystudio107/vitejs-docker-dev.git
 ```
 cd vitejs-docker-dev && make docker
 ```
-This will be somewhat lengthy, as it builds the Docker image, and then clones down the [vitejs](https://github.com/vitejs/vite/) repository, and installs all of the dependencies
+This will be somewhat lengthy, as it builds the Docker image, and then clones down the [vitejs](https://github.com/vitejs/vite/) repository, and installs all of its dependencies
 
 3. Start Vite in development mode:
 ```
-make vite-npm run dev
+make vite-pnpm run dev
 ```
 
 4. Start the Vite app that you use for testing:
-```angular2html
+```
 make pnpm run dev
 ```
+
+## How it works
+
