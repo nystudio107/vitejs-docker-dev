@@ -41,3 +41,10 @@ make pnpm run dev
 
 ## How it works
 
+Vite.js Docker Dev uses one Docker image, and 3 Docker containers that are all based on the same image:
+
+1. `vitejs-build-dev` is the container used to build the local dev environment, and is responsible for cloning down the Vite repository, installing dependencies, etc.
+2. `vitejs-vite-dev` is the container that runs Vite itself in development mode
+3. `vitejs-app-dev` is the container that runs the client "app" that you use while testing/developing Vite.js
+
+
