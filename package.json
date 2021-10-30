@@ -2,7 +2,7 @@
   "name": "vitejs-docker-dev",
   "description": "Local development environment for developing vite.js via Docker container",
   "version": "1.0.0",
-  "keywords": ["vite", "vitejs", "vite.js", "local", "development", "docker", "container"],
+  "keywords": ["vite", "vitejs", "local", "development", "development-environment","docker", "docker-container"],
   "scripts": {
     "dev": "pnpm link /app/vite/packages/vite && vite",
     "build": "pnpm link /app/vite/packages/vite && tsc && vite build",
