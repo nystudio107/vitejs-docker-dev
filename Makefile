@@ -3,8 +3,13 @@ PORT?=3000
 VITE_REPO?=https://github.com/vitejs/vite.git
 VITE_DIR?=vite
 
-.PHONY: docker pnpm vite
+.PHONY: clean docker pnpm vite
 
+clean:
+	rm -rf .pnpm-store
+	rm -rf node_modules
+	rm -rf vite
+	rm pnpm-lock.yaml
 docker:
 	docker build \
 		docker-config/ \
