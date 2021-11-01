@@ -126,8 +126,8 @@ make vite-pnpm install
 
 You can pass in optional CLI arguments to override the default settings that `make vite-pnpm` uses:
 
-* `TAG=` (default: `14-alpine`) - allows you to specify the tag for the `nystudio107/vitejs-dev` Docker image that should be used. e.g.: `make vite-pnpm TAG="16-alpine"` will use the Node 16 Docker image created with `make docker TAG="16-alpine"`
-* `VITE_DIR=` (default: `vite`) - allows you to specify the local name of the Vite.js repository directory, e.g.: `make docker VITE_DIR="my-vite-fork"`
+* `TAG=` (default: `14-alpine`) - allows you to specify the tag for the `nystudio107/vitejs-dev` Docker image that should be used. e.g.: `make vite-pnpm TAG="16-alpine"` will use the Node 16 Docker image created with `make vite-pnpm TAG="16-alpine"`
+* `VITE_DIR=` (default: `vite`) - allows you to specify the local name of the Vite.js repository directory, e.g.: `make vite-pnpm VITE_DIR="my-vite-fork"`
 
 #### Terminating
 
@@ -159,8 +159,8 @@ make app-pnpm install
 You can pass in optional CLI arguments to override the default settings that `make app-pnpm` uses:
 
 * `TAG=` (default: `14-alpine`) - allows you to specify the tag for the `nystudio107/vitejs-dev` Docker image that should be used. e.g.: `make app-pnpm TAG="16-alpine"` will use the Node 16 Docker image created with `make docker TAG="16-alpine"`
-* `APP_DIR=` (default: `app`) - allows you to specify the local name of the App repository directory, e.g.: `make docker APP_DIR="my-app"`
-* `PORT=` (default: `3000`) - allows you to specify the port that should be exposed on the host for Vite.js's HMR, e.g.: `make docker PORT="3001"`
+* `APP_DIR=` (default: `app`) - allows you to specify the local name of the App repository directory, e.g.: `make app-pnpm APP_DIR="my-app"`
+* `PORT=` (default: `3000`) - allows you to specify the port that should be exposed on the host for Vite.js's HMR, e.g.: `make app-pnpm PORT="3001"`
 
 #### Terminating
 
