@@ -61,8 +61,8 @@ From a high level point of view, you:
 
 Then, when you're ready to do Vite.js development, you:
 
-* Run Vite.js in development mode with `make vite-pnpm run dev`
-* Run your app that uses Vite.js in development mode with `make app-pnpm run dev`
+* In a terminal, run Vite.js in development mode with `make vite-pnpm run dev`
+* In a new terminal, run your app that uses Vite.js in development mode with `make app-pnpm run dev`
 
 Then you can freely make changes to either the Vite.js codebase, or your app's codebase, and they will both be rebuilt when anything changes.
 
