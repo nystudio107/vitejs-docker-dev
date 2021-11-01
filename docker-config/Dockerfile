@@ -20,6 +20,6 @@ RUN set -eux; \
     && \
     npm install -g pnpm
 
-CMD ["run dev"]
+CMD ["pnpm run dev"]
 
-ENTRYPOINT ["pnpm"]
+ENTRYPOINT ["/bin/sh"]

@@ -1,15 +1,16 @@
 TAG?=14-alpine
 PORT?=3000
-VITE_REPO?=https://github.com/vitejs/vite.git
+APP_DIR?=app
 VITE_DIR?=vite
+VITE_REPO?=https://github.com/vitejs/vite.git
 
 .PHONY: clean docker pnpm vite
 
 clean:
-	rm -rf .pnpm-store
-	rm -rf node_modules
-	rm -rf vite
-	rm pnpm-lock.yaml
+	rm -rf /app/.pnpm-store
+	rm -rf /app/${APP_DIR}/node_modules
+	rm -rf /app/${VITE_DIR}
+	rm /app/${APP_DIR}/pnpm-lock.yaml
 docker:
 	docker build \
 		docker-config/ \
@@ -21,12 +22,11 @@ docker:
 		--rm \
 		-t \
 		-v `pwd`:/app \
-		--entrypoint "/bin/sh" \
 		-e VITE_REPO=${VITE_REPO} \
 		-e VITE_DIR=${VITE_DIR} \
 		nystudio107/vitejs-dev:${TAG} \
 		docker-config/docker.sh
-pnpm:
+app-pnpm:
 	docker container run \
 		--name vitejs-app-dev \
 		--rm \
@@ -34,16 +34,15 @@ pnpm:
 		-p ${PORT}:${PORT} \
 		-v `pwd`:/app \
 		nystudio107/vitejs-dev:${TAG} \
-		$(filter-out $@,$(MAKECMDGOALS))
+		-c "cd /app/${APP_DIR} && pnpm link /app/${VITE_DIR}/packages/vite && pnpm $(filter-out $@,$(MAKECMDGOALS))"
 vite-pnpm:
 	docker container run \
 		--name vitejs-vite-dev \
 		--rm \
 		-t \
 		-v `pwd`:/app \
-		--entrypoint "/bin/sh" \
 		nystudio107/vitejs-dev:${TAG} \
-		-c "cd ${VITE_DIR}/packages/vite && pnpm $(filter-out $@,$(MAKECMDGOALS))"
+		-c "cd /app/${VITE_DIR}/packages/vite && pnpm $(filter-out $@,$(MAKECMDGOALS))"
 %:
 	@:
 # ref: https://stackoverflow.com/questions/6273608/how-to-pass-argument-to-makefile-from-command-line

@@ -4,9 +4,9 @@
   "version": "1.0.0",
   "keywords": ["vite", "vitejs", "local", "development", "development-environment","docker", "docker-container"],
   "scripts": {
-    "dev": "pnpm link /app/vite/packages/vite && vite",
-    "build": "pnpm link /app/vite/packages/vite && tsc && vite build",
-    "serve": "pnpm link /app/vite/packages/vite && vite preview"
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "serve": "vite preview"
   },
   "devDependencies": {
     "typescript": "^4.3.2"
