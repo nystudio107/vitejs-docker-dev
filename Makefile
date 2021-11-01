@@ -35,6 +35,8 @@ app-pnpm:
 		-v `pwd`:/app \
 		nystudio107/vitejs-dev:${TAG} \
 		-c "cd /app/${APP_DIR} && pnpm link /app/${VITE_DIR}/packages/vite && pnpm $(filter-out $@,$(MAKECMDGOALS))"
+app-sh:
+	docker exec -it vitejs-app-dev /bin/sh
 vite-pnpm:
 	docker container run \
 		--name vitejs-vite-dev \
@@ -43,6 +45,8 @@ vite-pnpm:
 		-v `pwd`:/app \
 		nystudio107/vitejs-dev:${TAG} \
 		-c "cd /app/${VITE_DIR}/packages/vite && pnpm $(filter-out $@,$(MAKECMDGOALS))"
+vite-sh:
+	docker exec -it vitejs-vite-dev /bin/sh
 %:
 	@:
 # ref: https://stackoverflow.com/questions/6273608/how-to-pass-argument-to-makefile-from-command-line
