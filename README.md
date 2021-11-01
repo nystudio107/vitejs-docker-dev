@@ -152,7 +152,7 @@ You then issue any `pnpm` commands you like using this, which will all be run in
 ```
 make app-pnpm install
 ```
-...translates to `pnpm install` inside of the `vitejs-vite-dev` Docker container, run in the `app/` directory.
+...translates to `pnpm install` inside of the `vitejs-app-dev` Docker container, run in the `app/` directory.
 
 #### CLI Arguments
 
