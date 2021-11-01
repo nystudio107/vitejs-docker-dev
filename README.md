@@ -162,6 +162,7 @@ You can pass in optional CLI arguments to override the default settings that `ma
 
 * `TAG=` (default: `14-alpine`) - allows you to specify the tag for the `nystudio107/vitejs-dev` Docker image that should be used. e.g.: `make app-pnpm TAG="16-alpine"` will use the Node 16 Docker image created with `make docker TAG="16-alpine"`
 * `APP_DIR=` (default: `app`) - allows you to specify the local name of the App repository directory, e.g.: `make docker APP_DIR="my-app"`
+* `PORT=` (default: `3000`) - allows you to specify the port that should be exposed on the host for Vite.js's HMR, e.g.: `make docker PORT="3001"`
 
 #### Terminating
 
@@ -182,6 +183,18 @@ Should you wish to get a shell "inside" of the `vitejs-app-dev` Docker container
 make app-sh
 ```
 This will open up an interactive shell using `sh` that allows you to run arbitrary shell commands inside of the container
+
+### `make clean`
+
+This will clean the Vite.js Docker Dev environment entirely, allowing you to start from scratch.
+
+Specifically, it will delete the following files & directories:
+```
+.pnpm-store
+app/node_modules/
+vite/
+app/pnpm-lock.yaml
+```
 
 ## Roadmap
 
