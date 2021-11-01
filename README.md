@@ -126,7 +126,7 @@ make vite-pnpm install
 
 You can pass in optional CLI arguments to override the default settings that `make vite-pnpm` uses:
 
-* `TAG=` (default: `14-alpine`) - allows you to specify the tag for the `nystudio107/vitejs-dev` Docker image that should be used. e.g.: `make vite-pnpm TAG="16-alpine"` will use the Node 16 Docker image created with `make vite-pnpm TAG="16-alpine"`
+* `TAG=` (default: `14-alpine`) - allows you to specify the tag for the `nystudio107/vitejs-dev` Docker image that should be used. e.g.: `make vite-pnpm TAG="16-alpine"` will use the Node 16 Docker image created with `make docker TAG="16-alpine"`
 * `VITE_DIR=` (default: `vite`) - allows you to specify the local name of the Vite.js repository directory, e.g.: `make vite-pnpm VITE_DIR="my-vite-fork"`
 
 #### Terminating
