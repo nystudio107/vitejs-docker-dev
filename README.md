@@ -1,4 +1,5 @@
 # Vite.js Docker Dev
+
 Local development environment for developing vite.js via Docker container
 
 ## About
@@ -134,14 +135,6 @@ You can pass in optional CLI arguments to override the default settings that `ma
 
 To terminate the `vitejs-app-dev` Docker container, type Control-C in the terminal.
 
-### `make app-sh`
-
-Should you wish to get a shell "inside" of the `vitejs-vite-dev` Docker container, you can do:
-```
-make vite-sh
-```
-This will open up an interactive shell using `sh` that allows you to run arbitrary shell commands inside of the container
-
 ### `make app-pnpm <command>`
 
 The `make app-pnpm` runs a long-running `vitejs-vite-dev` Docker container based off of the `nystudio107/vitejs-dev` Docker image.
@@ -173,6 +166,14 @@ You can pass in optional CLI arguments to override the default settings that `ma
 #### Terminating
 
 To terminate the `vitejs-app-dev` Docker container, type Control-C in the terminal.
+
+### `make vite-sh`
+
+Should you wish to get a shell "inside" of the `vitejs-vite-dev` Docker container, you can do:
+```
+make vite-sh
+```
+This will open up an interactive shell using `sh` that allows you to run arbitrary shell commands inside of the container
 
 ### `make app-sh`
 
