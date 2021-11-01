@@ -4,7 +4,7 @@ APP_DIR?=app
 VITE_DIR?=vite
 VITE_REPO?=https://github.com/vitejs/vite.git
 
-.PHONY: clean docker pnpm vite
+.PHONY: clean docker app-pnpm vite-pnpm app-sh vite-sh
 
 clean:
 	rm -rf /app/.pnpm-store
