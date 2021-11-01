@@ -10,8 +10,6 @@ It takes care of the setup listed in the [Vite Contributing Guide](https://githu
 
 The only requirement is that you have [Docker](https://www.docker.com/products/docker-desktop) installed (you do not need `node`, `npm`, `pnpm`, or anything else installed locally).
 
-Reference: [Vite Contributing Guide](https://github.com/vitejs/vite/blob/main/CONTRIBUTING.md)
-
 ## Why Docker?
 
 Developers who have adopted [Docker](https://www.docker.com/) for a containerized approach to development are used to not having to install a matching development infrastructure each time they approach a project.
