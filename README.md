@@ -23,20 +23,26 @@ It also allows you to easily swap between basic things like node versions, witho
 git clone https://github.com/nystudio107/vitejs-docker-dev.git
 ```
 
-2. Build the Docker image:
+2. Go into the `vitejs-docker-dev` directory:
+
 ```
-cd vitejs-docker-dev && make docker
+cd vitejs-docker-dev
+```
+
+3. Build the Docker image:
+```
+make docker
 ```
 This will be somewhat lengthy, as it builds the Docker image, and then clones down the [vitejs](https://github.com/vitejs/vite/) repository, and installs all of its dependencies
 
-3. Start Vite in development mode:
+4. Start Vite in development mode:
 ```
 make vite-pnpm run dev
 ```
 
-4. Start the Vite app that you use for testing:
+5. Start the Vite app that you use for testing:
 ```
-make pnpm run dev
+make app-pnpm run dev
 ```
 
 ## How it works
