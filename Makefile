@@ -1,4 +1,4 @@
-TAG?=14-alpine
+TAG?=16-alpine
 PORT?=3000
 APP_DIR?=app
 VITE_DIR?=vite

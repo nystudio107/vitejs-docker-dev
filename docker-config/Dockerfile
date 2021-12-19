@@ -1,4 +1,4 @@
-ARG TAG=14-alpine
+ARG TAG=16-alpine
 ARG VITE_REPO=https://github.com/vitejs/vite.git
 ARG VITE_DIR=vite
 
