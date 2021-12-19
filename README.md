@@ -43,10 +43,20 @@ This will be somewhat lengthy, as it builds the Docker image, and then clones do
 make vite-pnpm run dev
 ```
 
+![Screenshot](./resources/img/vitejs-docker-dev-vite.png)
+
 5. In a new terminal, start the Vite app that you use for developing/testing (located in the `app/` dir):
 ```
 make app-pnpm run dev
 ```
+
+![Screenshot](./resources/img/vitejs-docker-dev-app.png)
+
+Then just navigate to `http://localhost:3000` in your browser, and the Vite app in `app/` will be running.
+
+![Screenshot](./resources/img/vitejs-docker-dev-browser.png)
+
+You can freely make changes to either the Vite.js codebase, or your app's codebase, and they will both be rebuilt when anything changes.
 
 ## Using Vite.js Docker Dev
 
@@ -79,13 +89,13 @@ This is a lengthy operation that you typically only have to do once, because fro
 
 You can think of the Docker image as a recipe, with all of ingredients and tools you need wrapped up inside it.
 
-The Docker image will be named `nystudio107/vitejs-dev` and be tagged with the default `14-alpine` tag.
+The Docker image will be named `nystudio107/vitejs-dev` and be tagged with the default `16-alpine` tag.
 
 #### CLI Arguments
 
 You can pass in optional CLI arguments to override the default settings that `make docker` uses:
 
-* `TAG=` (default: `14-alpine`) - allows you to specify the official [node Docker image](https://hub.docker.com/_/node) tag that should be used. Using this, you can change the version of Node the container runs, e.g.: `make docker TAG="16-alpine"` will use the latest version of Node 16
+* `TAG=` (default: `16-alpine`) - allows you to specify the official [node Docker image](https://hub.docker.com/_/node) tag that should be used. Using this, you can change the version of Node the container runs, e.g.: `make docker TAG="16-alpine"` will use the latest version of Node 16
 * `VITE_REPO=` (default: `https://github.com/vitejs/vite.git`) - allows you to specify the Vite.js repository that should be cloned down, e.g.: `make docker VITE_REPO="https://github.com/my-vendor/my-vite-fork.git"`
 * `VITE_DIR=` (default: `vite`) - allows you to specify the local name of the Vite.js repository directory, e.g.: `make docker VITE_DIR="my-vite-fork"`
 
@@ -126,7 +136,7 @@ make vite-pnpm install
 
 You can pass in optional CLI arguments to override the default settings that `make vite-pnpm` uses:
 
-* `TAG=` (default: `14-alpine`) - allows you to specify the tag for the `nystudio107/vitejs-dev` Docker image that should be used. e.g.: `make vite-pnpm TAG="16-alpine"` will use the Node 16 Docker image created with `make docker TAG="16-alpine"`
+* `TAG=` (default: `16-alpine`) - allows you to specify the tag for the `nystudio107/vitejs-dev` Docker image that should be used. e.g.: `make vite-pnpm TAG="16-alpine"` will use the Node 16 Docker image created with `make docker TAG="16-alpine"`
 * `VITE_DIR=` (default: `vite`) - allows you to specify the local name of the Vite.js repository directory, e.g.: `make vite-pnpm VITE_DIR="my-vite-fork"`
 
 #### Terminating
@@ -158,7 +168,7 @@ make app-pnpm install
 
 You can pass in optional CLI arguments to override the default settings that `make app-pnpm` uses:
 
-* `TAG=` (default: `14-alpine`) - allows you to specify the tag for the `nystudio107/vitejs-dev` Docker image that should be used. e.g.: `make app-pnpm TAG="16-alpine"` will use the Node 16 Docker image created with `make docker TAG="16-alpine"`
+* `TAG=` (default: `16-alpine`) - allows you to specify the tag for the `nystudio107/vitejs-dev` Docker image that should be used. e.g.: `make app-pnpm TAG="16-alpine"` will use the Node 16 Docker image created with `make docker TAG="16-alpine"`
 * `APP_DIR=` (default: `app`) - allows you to specify the local name of the App repository directory, e.g.: `make app-pnpm APP_DIR="my-app"`
 * `PORT=` (default: `3000`) - allows you to specify the port that should be exposed on the host for Vite.js's HMR, e.g.: `make app-pnpm PORT="3001"`
 
