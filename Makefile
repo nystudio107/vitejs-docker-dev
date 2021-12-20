@@ -10,7 +10,7 @@ clean:
 	rm -rf .pnpm-store
 	rm -rf ${APP_DIR}/node_modules
 	rm -rf ${VITE_DIR}
-	rm ${APP_DIR}/pnpm-lock.yaml
+	rm -f ${APP_DIR}/pnpm-lock.yaml
 docker:
 	docker build \
 		docker-config/ \
@@ -21,7 +21,7 @@ docker:
 		--name vitejs-build-dev \
 		--rm \
 		-t \
-		-v `pwd`:/app \
+		-v "${CURDIR}":/app \
 		-e VITE_REPO=${VITE_REPO} \
 		-e VITE_DIR=${VITE_DIR} \
 		-e APP_DIR=${APP_DIR} \
@@ -33,7 +33,7 @@ app-pnpm:
 		--rm \
 		-t \
 		-p ${PORT}:${PORT} \
-		-v `pwd`:/app \
+		-v "${CURDIR}":/app \
 		nystudio107/vitejs-dev:${TAG} \
 		-c "cd /app/${APP_DIR} && pnpm link /app/${VITE_DIR}/packages/vite && pnpm $(filter-out $@,$(MAKECMDGOALS))"
 app-sh:
@@ -43,7 +43,7 @@ vite-pnpm:
 		--name vitejs-vite-dev \
 		--rm \
 		-t \
-		-v `pwd`:/app \
+		-v "${CURDIR}":/app \
 		nystudio107/vitejs-dev:${TAG} \
 		-c "cd /app/${VITE_DIR}/packages/vite && pnpm $(filter-out $@,$(MAKECMDGOALS))"
 vite-sh:
