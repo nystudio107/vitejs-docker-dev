@@ -2,6 +2,10 @@
 
 All notable changes to this project will be documented in this file.
 
+## 1.0.2 - 2021.12.20
+### Fixed
+* Use `${CURDIR}` instead of `pwd` to be cross-platform compatible with Windows WSL2
+
 ## 1.0.1 - 2021.12.19
 ### Added
 * Added screenshots to the `README.md`
