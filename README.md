@@ -16,7 +16,7 @@ Developers who have adopted [Docker](https://www.docker.com/) for a containerize
 
 This allows you to "shrink-wrap" the devops needed to run a project in a container, which will run anywhere, on any machine, without having to do any meticulous setup.
 
-It also allows you to easily swap between basic things like node versions, without affecting your local computer.
+It also allows you to easily swap between basic things like node versions, without affecting your local computer. You can even run Vite in one version of Node, and your app in another.
 
 ## Quick Start
 
@@ -52,7 +52,7 @@ make app-pnpm run dev
 
 ![Screenshot](./resources/img/vitejs-docker-dev-app.png)
 
-Then just navigate to `http://localhost:3000` in your browser, and the Vite app in `app/` will be running.
+Then just navigate to `http://localhost:3000` in your browser, and the Vite app in `app/` will be running, using Vite running out of the `vite/` dir.
 
 ![Screenshot](./resources/img/vitejs-docker-dev-browser.png)
 
