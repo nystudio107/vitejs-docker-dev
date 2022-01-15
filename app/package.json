@@ -5,7 +5,7 @@
   "keywords": ["vite", "vitejs", "local", "development", "development-environment","docker", "docker-container"],
   "scripts": {
     "dev": "vite",
-    "build": "tsc && vite build",
+    "build": "vite build",
     "serve": "vite preview"
   },
   "devDependencies": {
