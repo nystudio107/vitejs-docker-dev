@@ -75,7 +75,7 @@ From a high level point of view, you:
 
 Then, when you're ready to do Vite.js development, you:
 
-* In a terminal, run Vite.js in development mode with `make vite-pnpm run dev`
+* In a terminal, run Vite.js in development mode with `make vite-pnpm run dev` then wait for it to fully start up
 * In a new terminal, run your app that uses Vite.js in development mode with `make app-pnpm run dev`
 
 Then you can freely make changes to either the Vite.js codebase, or your app's codebase, and they will both be rebuilt when anything changes.
@@ -149,6 +149,8 @@ You can pass in optional CLI arguments to override the default settings that `ma
 To terminate the `vitejs-app-dev` Docker container, type Control-C in the terminal.
 
 ### `make app-pnpm <command>`
+
+Ensure that the development version of Vite is already running via `make vite-pnpm run dev` **before** using this command.
 
 The `make app-pnpm` runs a long-running `vitejs-vite-dev` Docker container based off of the `nystudio107/vitejs-dev` Docker image.
 
