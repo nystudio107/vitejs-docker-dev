@@ -43,12 +43,17 @@ This will be somewhat lengthy, as it builds the Docker image, and then clones do
 make vite-pnpm run dev
 ```
 
+...and ensure you **wait** until you see the following output:
+
 ![Screenshot](./resources/img/vitejs-docker-dev-vite.png)
 
-5. In a new terminal, start the Vite app that you use for developing/testing (located in the `app/` dir):
+5. Then in a new terminal, start the Vite app that you use for developing/testing (located in the `app/` dir):
+
 ```
 make app-pnpm run dev
 ```
+
+...and ensure you **wait** until you see the following output:
 
 ![Screenshot](./resources/img/vitejs-docker-dev-app.png)
 
